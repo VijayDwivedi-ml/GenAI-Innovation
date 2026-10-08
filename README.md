@@ -1,4 +1,3 @@
-```markdown
 # 🚀 GenAI Innovation Studio
 
 An interactive, Streamlit-based workshop app built for the **UGC-MMTTC Refresher Course on "Applied Generative AI: Innovation with Responsibility"** (Day 11 — 15 Oct 2026).
