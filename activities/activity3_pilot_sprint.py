@@ -1,7 +1,7 @@
 """Activity 3: The 90-Day Pilot Sprint — Case Study → Plan → Reality Check.
 
 Flow:
-    Phase 1 — See the NCRB case study (4 cards, expandable)
+    Phase 1 — See the NCRB case study (4 cards, expandable + appendix links)
     Phase 2 — Plan your own project (4-stage form with problem-statement helper)
     Phase 3 — Groq Reality Check (JSON critique)
     Phase 4 — Download your Direction Plan
@@ -86,6 +86,53 @@ CASE_STUDY = [
         "lesson": (
             "A project isn't done when it works — it's done when people can "
             "use it and know what it doesn't say."
+        ),
+    },
+]
+
+
+# ===========================================================================
+# APPENDIX — Reference links for further reading
+# ===========================================================================
+APPENDIX_LINKS = [
+    {
+        "icon": "📁",
+        "title": "India Data Portal — Suicides in India (CKAN)",
+        "url": "https://ckan.indiadataportal.com/dataset/suicides-in-india",
+        "why": (
+            "The exact source of the 8 clean CSVs used in this case study. "
+            "Open, structured, and free to download. Start here if you want "
+            "to reproduce or extend the analysis."
+        ),
+    },
+    {
+        "icon": "📰",
+        "title": "Beyond the numbers — interpreting the rise in student suicide deaths in India",
+        "url": "https://www.sciencedirect.com/science/article/pii/S2772368226001071",
+        "why": (
+            "A peer-reviewed paper that documents why student suicide 'rates' "
+            "are hard to compute from NCRB data — because the youth denominator "
+            "is missing. A real example of the 'Data & Honesty' principle."
+        ),
+    },
+    {
+        "icon": "📄",
+        "title": "A Study of Suicidal Behavior in India (Dash DK, 2026)",
+        "url": "https://apjhs.com/index.php/apjhs/article/view/3457/1741",
+        "why": (
+            "A decade-long analysis of the same NCRB data. Shows how academic "
+            "researchers frame limitations when using police-recorded data. "
+            "Good for understanding the 'Limits & Delivery' stage."
+        ),
+    },
+    {
+        "icon": "🏛️",
+        "title": "NCRB Official — Accidental Deaths & Suicides in India",
+        "url": "https://ncrb.gov.in/accidental-deaths-suicides-in-india-year-wise.html",
+        "why": (
+            "The primary source: the annual ADSI reports published by the "
+            "National Crime Records Bureau. Every number in this case study "
+            "ultimately comes from here."
         ),
     },
 ]
@@ -249,6 +296,15 @@ def _build_download_text(plan: dict, critique: dict) -> str:
         "Next Step:",
         f"  {critique.get('next_step', '—')}",
         "",
+        "━" * 60,
+        "APPENDIX — Reference links",
+        "━" * 60,
+    ]
+    for link in APPENDIX_LINKS:
+        lines.append(f"  • {link['title']}")
+        lines.append(f"    {link['url']}")
+    lines += [
+        "",
         "Reference: NCRB Suicide Data Dashboard (India, 2018–2022)",
         "━" * 60,
     ]
@@ -322,6 +378,31 @@ def _render_case_study():
             for item in card["did"]:
                 st.markdown(f"- {item}")
             st.info(f"💡 **Lesson:** {card['lesson']}")
+
+    # ---------- APPENDIX ----------
+    _render_appendix()
+
+
+# ===========================================================================
+# APPENDIX — Reference links
+# ===========================================================================
+def _render_appendix():
+    st.markdown("### 📎 Appendix — Go deeper")
+    st.caption(
+        "Four credible sources if you want to explore the NCRB data yourself. "
+        "Useful for building your own project or for citing in a report."
+    )
+
+    for link in APPENDIX_LINKS:
+        with st.expander(f"{link['icon']}  {link['title']}", expanded=False):
+            st.markdown(f"**Link:** [{link['url']}]({link['url']})")
+            st.markdown(f"**Why it matters:** {link['why']}")
+
+    st.info(
+        "💡 **Tip:** When you cite data in your own project, always link to "
+        "the primary source (NCRB) — and where useful, the cleaned dataset "
+        "(India Data Portal). Reviewers check."
+    )
 
 
 # ===========================================================================
