@@ -499,3 +499,36 @@ pre {
     border: 1px solid #DBEAFE !important;
     border-radius: 10px !important;
 }
+
+/* ============================================================
+   ACTIVITY-CARD TEXT FIX — ensure readability on light background
+   ============================================================ */
+
+/* All text inside the card must be dark */
+.activity-card,
+.activity-card * {
+    color: #111827 !important;
+}
+
+/* Headings get deeper navy for hierarchy */
+.activity-card h1,
+.activity-card h2,
+.activity-card h3,
+.activity-card h4 {
+    color: #1E3A8A !important;
+}
+
+/* The scenario domain label — replace the pale purple with a deeper blue */
+.activity-card div[style*="color:#8B5CF6"],
+.activity-card div[style*="color: #8B5CF6"] {
+    color: #1E40AF !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.06em !important;
+}
+
+/* Scenario body text — make sure it reads clearly */
+.activity-card p {
+    color: #1F2937 !important;
+    font-size: 1.02rem !important;
+    line-height: 1.65 !important;
+}
