@@ -423,7 +423,7 @@ def _render_plan_form():
         with st.expander("💡 Need help phrasing it? Use this template", expanded=False):
             st.markdown(
                 """
-                **IBM's proven problem-statement formula:**
+                **Proven problem-statement formula:**
 
                 > *How can we help **[a specific user or group]** find a way to
                 > **[do what]** so that they can **[a measurable outcome]**?*
