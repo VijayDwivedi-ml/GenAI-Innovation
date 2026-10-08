@@ -1,0 +1,501 @@
+/* ============================================================
+   GenAI Innovation Studio — Light Theme
+   Palette anchored to:
+     Primary:      #2563EB
+     Background:   #FFFFFF
+     Secondary:    #EFF6FF
+     Text:         #111827
+   ============================================================ */
+
+/* ---------- GLOBAL TYPOGRAPHY ---------- */
+html, body, [class*="css"] {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #111827;
+    letter-spacing: 0.005em;
+}
+
+/* ---------- HIDE STREAMLIT CHROME (keep header for sidebar toggle) ---------- */
+#MainMenu { visibility: hidden; }
+footer { visibility: hidden; }
+
+/* Hide the Deploy button and top-right menu, but NOT the header itself.
+   The header contains the sidebar toggle button, which we need available. */
+[data-testid="stToolbar"] {
+    display: none !important;
+}
+[data-testid="stDecoration"] {
+    display: none !important;
+}
+[data-testid="stStatusWidget"] {
+    display: none !important;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+.block-container {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    max-width: 1200px;
+}
+
+/* ---------- HEADERS ---------- */
+h1, h2, h3, h4 {
+    color: #111827;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+}
+
+h1 {
+    font-size: 2.4rem !important;
+    color: #1E3A8A;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.75rem !important;
+    color: #1E3A8A;
+    border-bottom: 1px solid #DBEAFE;
+    padding-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+h3 {
+    font-size: 1.2rem !important;
+    color: #1E40AF;
+}
+
+/* ---------- CUSTOM CLASSES ---------- */
+.main-header {
+    font-size: 2.6rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    color: #1E3A8A;
+    margin-bottom: 0.5rem;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.sub-header {
+    color: #6B7280;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.5s ease-out 0.1s both;
+}
+
+/* ---------- CARDS ---------- */
+.activity-card {
+    background: #EFF6FF;
+    padding: 1.5rem 1.75rem;
+    border-radius: 14px;
+    border: 1px solid #DBEAFE;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 1px 3px rgba(37, 99, 235, 0.06);
+    transition: all 0.25s ease;
+    animation: fadeInUp 0.4s ease-out;
+}
+
+.activity-card:hover {
+    border-color: #2563EB;
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.12);
+    transform: translateY(-2px);
+}
+
+.glass-card {
+    background: #FFFFFF;
+    border: 1px solid #DBEAFE;
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.06);
+}
+
+/* ---------- BUTTONS ---------- */
+.stButton > button {
+    background: #2563EB;
+    color: #FFFFFF;
+    border: 1px solid #2563EB;
+    border-radius: 9px;
+    padding: 0.55rem 1.4rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+    box-shadow: 0 1px 2px rgba(37, 99, 235, 0.15);
+    transition: all 0.2s ease;
+}
+
+.stButton > button:hover {
+    background: #1D4ED8;
+    border-color: #1D4ED8;
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    transform: translateY(-1px);
+}
+
+.stButton > button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(37, 99, 235, 0.2);
+}
+
+.stButton > button:focus {
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    outline: none;
+}
+
+.stButton > button:disabled {
+    background: #F3F4F6;
+    color: #9CA3AF;
+    border-color: #E5E7EB;
+    box-shadow: none;
+    transform: none;
+    cursor: not-allowed;
+}
+
+/* Primary buttons — slightly stronger */
+.stButton > button[kind="primary"] {
+    background: #2563EB;
+    color: #FFFFFF;
+}
+
+.stButton > button[kind="primary"]:hover {
+    background: #1D4ED8;
+}
+
+/* ---------- METRICS ---------- */
+[data-testid="stMetric"] {
+    background: #FFFFFF;
+    padding: 1.1rem 1.4rem;
+    border-radius: 12px;
+    border: 1px solid #DBEAFE;
+    box-shadow: 0 1px 3px rgba(37, 99, 235, 0.05);
+    transition: all 0.25s ease;
+}
+
+[data-testid="stMetric"]:hover {
+    border-color: #2563EB;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+}
+
+[data-testid="stMetricLabel"] {
+    color: #6B7280 !important;
+    font-size: 0.82rem !important;
+    font-weight: 500 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+[data-testid="stMetricValue"] {
+    color: #1E3A8A !important;
+    font-size: 1.7rem !important;
+    font-weight: 700 !important;
+}
+
+/* ---------- SIDEBAR ---------- */
+[data-testid="stSidebar"] {
+    background: #EFF6FF;
+    border-right: 1px solid #DBEAFE;
+}
+
+[data-testid="stSidebar"] h3 {
+    color: #1E3A8A;
+    font-size: 1.05rem !important;
+    margin-top: 0.5rem;
+}
+
+/* Sidebar radio buttons (navigation) */
+[data-testid="stSidebar"] [role="radiogroup"] label {
+    padding: 0.55rem 0.85rem;
+    border-radius: 8px;
+    margin-bottom: 0.2rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    color: #1F2937;
+}
+
+[data-testid="stSidebar"] [role="radiogroup"] label:hover {
+    background: #DBEAFE;
+}
+
+/* ---------- SIDEBAR — FORCE VISIBLE ---------- */
+[data-testid="stSidebar"] {
+    display: block !important;
+    visibility: visible !important;
+    width: 21rem !important;
+    min-width: 21rem !important;
+    transform: translateX(0) !important;
+    margin-left: 0 !important;
+    transition: none !important;
+}
+
+/* Streamlit adds aria-expanded="false" when the sidebar is collapsed.
+   We override to keep the sidebar always open. */
+[data-testid="stSidebar"][aria-expanded="false"] {
+    display: block !important;
+    visibility: visible !important;
+    width: 21rem !important;
+    min-width: 21rem !important;
+    transform: translateX(0) !important;
+    margin-left: 0 !important;
+}
+
+/* Hide the collapse arrow since the sidebar is now always visible */
+[data-testid="stSidebarCollapseButton"],
+[data-testid="collapsedControl"] {
+    display: none !important;
+}
+
+/* ---------- EXPANDERS ---------- */
+.streamlit-expanderHeader,
+[data-testid="stExpander"] summary {
+    background: #FFFFFF !important;
+    border-radius: 10px;
+    border: 1px solid #DBEAFE !important;
+    font-weight: 600;
+    color: #1E3A8A !important;
+    transition: all 0.2s ease;
+}
+
+.streamlit-expanderHeader:hover,
+[data-testid="stExpander"] summary:hover {
+    border-color: #2563EB !important;
+    background: #EFF6FF !important;
+}
+
+[data-testid="stExpander"] {
+    border: none !important;
+    margin-bottom: 0.5rem;
+}
+
+/* ---------- INPUT FIELDS ---------- */
+.stTextInput > div > div > input,
+.stTextArea > div > div > textarea,
+.stSelectbox > div > div > select,
+.stNumberInput input {
+    background: #FFFFFF !important;
+    border: 1px solid #DBEAFE !important;
+    border-radius: 8px !important;
+    color: #111827 !important;
+    transition: all 0.2s ease;
+}
+
+.stTextInput > div > div > input::placeholder,
+.stTextArea > div > div > textarea::placeholder {
+    color: #9CA3AF !important;
+}
+
+.stTextInput > div > div > input:focus,
+.stTextArea > div > div > textarea:focus,
+.stSelectbox > div > div > select:focus {
+    border-color: #2563EB !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
+    outline: none !important;
+}
+
+/* ---------- SLIDERS ---------- */
+[data-testid="stSlider"] > div > div > div > div {
+    background: #2563EB !important;
+}
+
+/* ---------- PROGRESS BAR ---------- */
+[data-testid="stProgress"] > div > div > div > div {
+    background: #2563EB !important;
+    border-radius: 6px;
+}
+
+/* ---------- RADIO / CHECKBOX ---------- */
+[data-testid="stRadio"] label,
+[data-testid="stCheckbox"] label {
+    color: #1F2937;
+}
+
+/* Make form radio buttons (used in Activity 4) larger tap targets */
+[data-testid="stRadio"] > div[role="radiogroup"] > label {
+    padding: 0.35rem 0;
+}
+
+/* ---------- ALERTS ---------- */
+[data-testid="stAlert"] {
+    border-radius: 10px;
+    border-left-width: 4px;
+    padding: 0.9rem 1.1rem;
+    animation: fadeInUp 0.3s ease-out;
+}
+
+/* Success */
+[data-testid="stAlert"][data-baseweb="notification"]:has(svg[data-testid="stNotificationIconSuccess"]) {
+    background: #ECFDF5;
+    border-left-color: #059669;
+    color: #065F46;
+}
+
+/* Info */
+[data-testid="stAlert"][data-baseweb="notification"]:has(svg[data-testid="stNotificationIconInfo"]) {
+    background: #EFF6FF;
+    border-left-color: #2563EB;
+    color: #1E3A8A;
+}
+
+/* Warning */
+[data-testid="stAlert"][data-baseweb="notification"]:has(svg[data-testid="stNotificationIconWarning"]) {
+    background: #FFFBEB;
+    border-left-color: #D97706;
+    color: #92400E;
+}
+
+/* Error */
+[data-testid="stAlert"][data-baseweb="notification"]:has(svg[data-testid="stNotificationIconError"]) {
+    background: #FEF2F2;
+    border-left-color: #DC2626;
+    color: #991B1B;
+}
+
+/* ---------- TABS ---------- */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 0.4rem;
+    border-bottom: 1px solid #DBEAFE;
+}
+
+.stTabs [data-baseweb="tab"] {
+    background: transparent;
+    border-radius: 8px 8px 0 0;
+    padding: 0.55rem 1.1rem;
+    font-weight: 600;
+    color: #6B7280;
+    transition: all 0.2s ease;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    color: #1E40AF;
+    background: #EFF6FF;
+}
+
+.stTabs [aria-selected="true"] {
+    color: #2563EB !important;
+    background: #EFF6FF !important;
+    border-bottom: 2px solid #2563EB;
+}
+
+/* ---------- DATAFRAME ---------- */
+[data-testid="stDataFrame"] {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #DBEAFE;
+}
+
+/* ---------- DIVIDER ---------- */
+hr {
+    border: none;
+    height: 1px;
+    background: #DBEAFE;
+    margin: 1.5rem 0;
+}
+
+/* ---------- PLOTLY CHARTS ---------- */
+.js-plotly-plot .plotly .modebar {
+    background: transparent !important;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- BADGES ---------- */
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: #2563EB;
+    color: #FFFFFF;
+}
+
+.badge-soft {
+    background: #DBEAFE;
+    color: #1E40AF;
+    border: 1px solid #BFDBFE;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+    padding: 2.5rem 2rem;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+    border: 1px solid #BFDBFE;
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+/* ---------- REPORT CARD (Activity 3) ---------- */
+.report-card {
+    background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+    border: 1px solid #BFDBFE;
+    border-radius: 14px;
+    padding: 1.3rem 1.75rem;
+    margin: 1rem 0 1.25rem 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+    animation: fadeInUp 0.35s ease-out;
+}
+
+.report-grade {
+    font-size: 1.05rem;
+    color: #1E40AF;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.grade-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #2563EB;
+    margin: 0 0.5rem;
+}
+
+/* ---------- SCROLLBAR ---------- */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F9FAFB;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #BFDBFE;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #93C5FD;
+}
+
+/* ---------- CAPTIONS ---------- */
+.stCaption, [data-testid="stCaptionContainer"] {
+    color: #6B7280 !important;
+}
+
+/* ---------- CODE BLOCKS ---------- */
+code {
+    background: #EFF6FF !important;
+    color: #1E40AF !important;
+    padding: 0.1rem 0.4rem !important;
+    border-radius: 4px !important;
+    font-size: 0.85em !important;
+}
+
+pre {
+    background: #F9FAFB !important;
+    border: 1px solid #DBEAFE !important;
+    border-radius: 10px !important;
+}
